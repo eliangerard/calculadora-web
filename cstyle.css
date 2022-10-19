@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: #17181a;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: #22252d;
+    height: 10%;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.199);
+}
+
+marquee {
+    color: white;
+    font-size: 4vh;
+    font-weight: bolder;
+}
+
+aside {
+    float: left;
+    width: 20%;
+    height: 70%;
+    background-color: #2a2d37;
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.199);
+    display: inline;
+}
+
+.menuButtons {
+    color: white;
+    width: 100%;
+    height: 19%;
+    margin-bottom: 1%;
+    border:none;
+    font-weight: bold;
+    font-size: large;
+    background-color: #00000000;
+    cursor: pointer;
+}
+
+.botones {
+    padding: 1rem 1rem 0 1rem;
+    background-color: #2a2d37;
+    border-radius: 2rem 2rem 0 0;
+    height: 100%;
+    cursor: pointer;
+}
+section {
+    float: left;
+    width: 60%;
+    height: 70%;
+    background-color: #22252d;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.199);
+    overflow: hidden;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    font-weight: bolder;
+    color: #203444;
+    background-color: #2980b9;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+}
+.resultado {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    padding: 1vh 3vw;
+    margin: 1rem;
+    font-weight: bolder;
+    text-align: right;
+    font-size: 6vh;
+    height: calc(20% - 2.5rem);
+    background-color: #00000000;
+    border: none;
+    color: white;
+}
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(33% - 3.5rem);
+    height: calc(20% - 4rem);
+    background-color: rgba(0, 0, 0, 0.205);
+    text-align: center;
+    font-size: 2vw;
+    padding: 1rem;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.075);
+    margin: 0.5rem;
+    border-radius: 0.8rem;
+}
+
+#left {
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+#center {
+    background-color: rgba(0, 0, 0, 0.26);
+}
+
+#right {
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+.button:hover{
+    box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.199);
+    font-weight: bold;
+}
+
+.button:active{
+    font-weight: normal;
+    box-shadow: none;
+}

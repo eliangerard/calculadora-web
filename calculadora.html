@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="cstyle.css">
+</head>
+<body>
+    <header>
+        <marquee>CALCULADORA</marquee>
+    </header>
+    <div>
+        <aside>
+            <button class="menuButtons" onclick="operacion('+')">+</button><br>
+            <button class="menuButtons" onclick="operacion('-')">-</button><br>
+            <button class="menuButtons" onclick="operacion('*')">*</button><br>
+            <button class="menuButtons" onclick="operacion('/')">/</button><br>
+            <button class="menuButtons" onclick="borrar()">CE</button>
+            
+        </aside>
+        <section>
+            <center>
+                <input type="text" class="resultado" id="inpResult" placeholder="0.0"/>
+                <div class="botones">
+                    <div>
+                        <div class="button" id="left" onclick="numeros(7)">7</div>
+                        <div class="button" id="center" onclick="numeros(8)">8</div>
+                        <div class="button" id="right" onclick="numeros(9)">9</div>
+                    </div>
+                    <div>
+                        <div class="button" id="left" onclick="numeros(4)">4</div>
+                        <div class="button" id="center" onclick="numeros(5)">5</div>
+                        <div class="button" id="right" onclick="numeros(6)">6</div>
+                    </div>
+                    <div>
+                        <div class="button" id="left" onclick="numeros(1)">1</div>
+                        <div class="button" id="center" onclick="numeros(2)">2</div>
+                        <div class="button" id="right" onclick="numeros(3)">3</div>
+                    </div>
+                    <div>
+                        <div class="button" id="left" onclick="numeros('.')">.</div>
+                        <div class="button" id="center" onclick="numeros(0)">0</div>
+                        <div class="button" id="right" onclick="resultado()">=</div>
+                    </div>
+                </div>
+            </center>
+        </section>
+    </div>
+    <footer>
+        Elian Ramiro Gerard Ramos - ITCHII - Programación Web
+    </footer>
+    <script languague="javascript">
+        let input = document.getElementById("inpResult");
+        let primerValor;
+        let operador;
+        let punto = false;
+        const numeros = (num) => {
+            if(input.value == '.')
+            console.log(num);
+            input.value += num;
+        }
+        const operacion = (op) => {
+            primerValor = parseFloat(input.value);
+            input.value = "";
+            operador = op;
+        }
+        const resultado = () => {
+            let segundoValor = parseFloat(input.value);
+            let resultado = 
+                operador == '+' ? primerValor + segundoValor :
+                operador == '-' ? primerValor - segundoValor :
+                operador == '*' ? primerValor * segundoValor :
+                operador == '/' ? primerValor / segundoValor : null;
+
+            input.value = resultado;
+        }
+        const borrar = () => {
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
