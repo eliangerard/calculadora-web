@@ -36,7 +36,7 @@
                         <div class="button" id="right" onclick="numeros(3)">3</div>
                     </div>
                     <div>
-                        <div class="button" id="left" onclick="numeros('.')">.</div>
+                        <div class="button" id="left punto" onclick="numeros('.')">.</div>
                         <div class="button" id="center" onclick="numeros(0)">0</div>
                         <div class="button" id="right" onclick="resultado()">=</div>
                     </div>
@@ -53,13 +53,16 @@
         let operador;
         let punto = false;
         const numeros = (num) => {
-            if(input.value == '.')
-            console.log(num);
+            if(input.value.includes(".") && punto)
+                input.value = input.value.substring(0, input.value.length-2);
+            punto = !punto ? input.value.includes(".") : false;
+            console.log(punto);
             input.value += num;
         }
         const operacion = (op) => {
             primerValor = parseFloat(input.value);
             input.value = "";
+            punto = false;
             operador = op;
         }
         const resultado = () => {
@@ -71,6 +74,7 @@
                 operador == '/' ? primerValor / segundoValor : null;
 
             input.value = resultado;
+            punto = resultado.includes('.');
         }
         const borrar = () => {
             input.value = "";
