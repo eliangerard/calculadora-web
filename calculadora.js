@@ -17,12 +17,13 @@ const numeros = (num) => {
         num = "0.";
     //Si ya se registró un punto y se intenta poner otro, se termina la función con un return vacío
     if(punto && num === '.')
-        return;
+    return;
+    input.value += num;
     //Punto será igual a: si no se ha puesto ningún punto, entonces punto será igual a     
     //true o false si el input contiene un '.', si ya se había registrado un punto antes, se queda en true
     if(!punto)
-        punto == input.value.includes(".");
-    input.value += num;
+        punto = input.value.includes(".");
+    console.log(input.value);
     console.log(punto);
 }
 
@@ -55,7 +56,7 @@ const resultado = () => {
         operador == '/' ? primerValor / segundoValor : null;
 
     input.value = resultado;
-    punto = resultado.includes('.');
+    punto = (""+resultado).includes('.');
 }
 
 const borrar = () => {
