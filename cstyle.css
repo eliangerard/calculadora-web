@@ -1,6 +1,24 @@
 * {
     margin: 0;
 }
+
+::-webkit-scrollbar {
+    width: 1vh;
+    padding: 2rem;
+  }
+::-webkit-scrollbar-track {
+    background: #00000000;
+    box-shadow: 0px 1px 3px 1px rgb(29, 28, 29);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.041);
+    border-radius: 1vw;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.24);
+}
+
 body {
     background-color: #17181a;
     color: white;
@@ -23,6 +41,7 @@ marquee {
     color: white;
     font-size: 4vh;
     font-weight: bolder;
+    user-select: none;
 }
 
 aside {
@@ -35,6 +54,7 @@ aside {
     box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.199);
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 
 .operaciones {
@@ -108,6 +128,7 @@ aside {
     height: 66%;
     cursor: pointer;
     justify-content: center;
+    user-select: none;
 }
 .button {
     width: calc(33% - 0.8rem);
@@ -157,3 +178,21 @@ footer {
     background-color: rgba(0, 0, 0, 0.315);
 }
 
+#historialCompleto {
+    float: right;
+    background-color: #22252d;
+    width: calc(30% - 6rem);
+    height: 70%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: scroll;
+}
+.operacion {
+    background-color: rgba(0, 0, 0, 0.205);
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+}

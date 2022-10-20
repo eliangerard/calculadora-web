@@ -1,5 +1,6 @@
 let input = document.getElementById("inpResult");
 let historial = document.getElementById("historial");
+let historialCompleto = document.getElementById("historialCompleto");
 let primerValor = "";
 let operador = "";
 let punto = false;
@@ -17,7 +18,7 @@ const numeros = (num) => {
         num = "0.";
     //Si ya se registró un punto y se intenta poner otro, se termina la función con un return vacío
     if(punto && num === '.')
-    return;
+        return;
     input.value += num;
     //Punto será igual a: si no se ha puesto ningún punto, entonces punto será igual a     
     //true o false si el input contiene un '.', si ya se había registrado un punto antes, se queda en true
@@ -48,13 +49,14 @@ const resultado = () => {
     let segundoValor = parseFloat(input.value);
     historial.innerHTML = evaluacion+input.value+" =";
     if(operador == '/' && segundoValor == 0)
-        return input.value = 'MATH ERROR';
+    return input.value = 'MATH ERROR';
     let resultado = 
         operador == '+' ? primerValor + segundoValor :
         operador == '-' ? primerValor - segundoValor :
         operador == '*' ? primerValor * segundoValor :
         operador == '/' ? primerValor / segundoValor : null;
-
+    historialCompleto.innerHTML += `<p class="operacion">${historial.innerHTML} ${resultado}</p>`
+    
     input.value = resultado;
     punto = (""+resultado).includes('.');
 }
