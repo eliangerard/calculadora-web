@@ -27,6 +27,8 @@ const numeros = (num) => {
 }
 
 const operacion = (op) => {
+    if(isNaN(input.value))
+        return input.value = "SYNTAX ERROR";
     if(input.value == "")
         return;
     primerValor = parseFloat(input.value);
@@ -40,8 +42,12 @@ const operacion = (op) => {
 const resultado = () => {
     if(primerValor == "" || input.value == "")
         return;
+    if(isNaN(input.value))
+        return input.value = "SYNTAX ERROR";
     let segundoValor = parseFloat(input.value);
     historial.innerHTML = evaluacion+input.value+" =";
+    if(operador == '/' && segundoValor == 0)
+        return input.value = 'MATH ERROR';
     let resultado = 
         operador == '+' ? primerValor + segundoValor :
         operador == '-' ? primerValor - segundoValor :

@@ -130,19 +130,7 @@ aside {
     font-weight: normal;
     outline: rgba(255, 255, 255, 0.075) solid 0.2rem;
 }
-/* .button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(33% - 3.5rem);
-    height: calc(20% - 4rem);
-    background-color: rgba(0, 0, 0, 0.205);
-    font-size: 2vw;
-    padding: 1rem;
-    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.075);
-    margin: 0.5rem;
-    border-radius: 0.8rem;
-} */
+
 footer {
     display: flex;
     justify-content: center;
